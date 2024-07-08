@@ -1,0 +1,23 @@
+do_save: True
+
+openAI:
+  template: "inference/icl_variable_template_v4.j2"
+  question_path: "cleaned/questions_cleaned_v1.csv"
+  response_path: "splits/folds/response/sample_small_val_8.csv"
+  model: "gpt-4-0125-preview" # "ft:gpt-3.5-turbo-1106:umass-amherst::8p2sJSBX" "ft:gpt-3.5-turbo-1106:umass-amherst::8nC2Z5EW" "text-davinci-003" #aka gpt3, "code-davinci-002"  #aka codex, "gpt-3.5-turbo" #aka chatGPT
+  temperature: 0.75
+  max_tokens: 256
+  top_p: 0.9
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  stop: ["[stop]"]
+  logprobs: null
+  echo: False
+
+logger:
+  project: "mathia-fb"
+  entity: "ml4ed"
+  group: "ablation_study" 
+  debug: True
+  record: True
+  verbose: False

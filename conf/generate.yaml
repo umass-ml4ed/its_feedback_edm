@@ -1,0 +1,28 @@
+defaults:
+  - logger
+
+template: "inference/icl_variable_template_v4.j2"
+do_save: True
+
+logger:
+  record: True
+  group: "generation"
+
+gen:
+  # model_name: "mistralai/Mistral-7B-Instruct-v0.1" # "mistralai/mistral-7b-v0.1"
+  model_name: "mistralai/mistral-7b-v0.1"
+  gpu_num: 1  # Change to "cpu" if torch.cuda.is_available() is False
+  lora_weights_path: null
+  # lora_weights_path: "./saved_models/mistralai/Mistral-7B-v0.1_resplendent-tiger-146/"
+  questions_path: "cleaned/questions_cleaned_v1.csv"
+  train_responses_path: 'splits/folds/response/sample_small_train_8.csv'
+  val_responses_path: 'splits/folds/response/sample_small_val_8.csv'
+  batch_size: 48
+  
+  save_override: null
+
+  sample:
+    max_length: 150
+    top_p: 0.9
+    top_k: 50
+    temperature: 0.75

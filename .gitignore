@@ -1,0 +1,12 @@
+.DS_Store
+lm_outputs/*
+saved_models/*
+__pycache__/
+sanity_checks/*
+results/*
+prompts/samples/*
+outputs/* 
+multirun/*
+wandb/*
+splits/*
+openAIDatasets/*

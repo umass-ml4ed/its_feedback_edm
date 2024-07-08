@@ -1,0 +1,7 @@
+logger:
+  project: "mathia-fb"
+  entity: "ml4ed"
+  wand_group_id: ~ 
+  debug: True
+  record: False
+  verbose: False
